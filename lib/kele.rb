@@ -13,10 +13,7 @@ class Kele
       body: {email: @username, password: @password})
     @user_auth_token = response["auth_token"]
 
-    #raise ArgumentError, "Username or password is invalid" if @user_auth_token.nil?
-    if @user_auth_token.nil?
-      puts "Username or password is invalid"
-    end
-    #raise ArgumentError, "Username or password is invalid" unless @user_auth_token != nil
+    raise "Username or password is invalid" if @user_auth_token.nil?
+
   end
 end
